@@ -56,6 +56,6 @@ const driverDetails = {
     drivingLicencePhoto: "",
 };
 const isDelivered = {
-    orderId: "",
-    status: true,
+    orderId: "", // uuid from backend
+    status: ["PACKING", "DISPATCHED", "DELIVERED"],
 };
