@@ -8,7 +8,7 @@ const products = {
     quantity: "", // 1/4, 1/2, 3/4, 1, 2 ::: 🧮 calc needed
     buyingPrice: "",
     pricePerKg: "",
-    presizePrice: "", // in grams kind off!👌🏼
+    quantityAfterCleaning: "", // in grams kind off!👌🏼
     categories: "",
     image: "",
 };

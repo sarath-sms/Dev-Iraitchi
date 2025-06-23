@@ -7,43 +7,34 @@ export const ProductSchema = new Schema({
         type: String,
         require: true,
     },
-    quantity: {
+    quantity: { // 0.25, 0.5, 0.75,....
         type: Number,
         require: true,
     },
-    productSize: {
+    size: {
         type: String,
         require: true,
         enum: ["Tiny", "Small", "medium", "Large", "ExtraLarge"]
     },
-    paymentAmount: {
+    buyingPrice: {
         type: Number,
         require: true
     },
     pricePerKg: Number,
-    cutTypes: {
-        type: [String],
-        enum: ["Clean", "Full lined", "Slice", "Half"]
+    typeOfCuts: {
+        type: String,
+        enum: ["Piece", "Full lined", "Slice", "Half"]
     },
-    createdAt: Date,
+    cleanType: {
+        type: String,
+        enum: ["plainWater", "turmeric", "turmericAndRockSallt"]
+    },
     updatedAt: {
         type: Date,
-        require: true
-    }
+        // require: true
+    },
+    categories: [String],
+    image: String,
+    quantityAfterCleaning: String, // in grams kind off!👌🏼,
+    createdAt: Date,
 });
-
-const productData = [
-    "id", 
-    "product name", 
-    "quantity", // need to update
-    "size", // need to update
-    "payment amount", // need to update
-    "product price per kg", // need to update & maintain history
-    "cut types", 
-    "clean types (normal, turmeric)",
-    "image-url", 
-    "product name in different languages (prirority: Tamil, hindi, telugu, malayalam)", // in future
-    "product category", // can be in array need to analyse
-    "created at",
-    "updated at",
-]
