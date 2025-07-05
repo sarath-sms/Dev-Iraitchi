@@ -20,18 +20,9 @@ export const addNewUser = async (req, res) => {
     }catch(err) {
         console.log(err)
     }
-    return
-    
-    try {
-        const User = await newUser.save()
-        res.json(User)
-    } catch(err) {
-        res.send(err)
-    };
 }
 
 export const userList = async (req, res) => {
     const users = await User.find({})
     res.json(users);
-
 };
