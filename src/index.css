@@ -49,7 +49,7 @@ h1 {
 #container {
   color:#999;
   text-transform: uppercase;
-  font-size:36px;
+  font-size:26px;
   font-weight:bold;
   position: relative;
   width:100%;
@@ -84,7 +84,7 @@ h1 {
 }
 .goldFont {
   margin: 0;
-  font-size: 40px;
+  font-size: 26px;
   font-family: arial;
   font-weight: bold;
   background: -webkit-linear-gradient(top left, #e3b840 0%, #fde17a 24%, #fff889 36%, #fffbbc 46%, #fffbbc 52%, #fff889 58%, #fff889 67%, #e3b840 100%);
