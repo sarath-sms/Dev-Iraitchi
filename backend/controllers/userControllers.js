@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { UserSchema } from "../models/userModel";
 import bcrypt from "bcrypt";
+import { createSecretToken } from "../utils/SecretToken";
 
 const User = mongoose.model('User', UserSchema);
 
@@ -10,6 +11,32 @@ export const checkMobNo = async (req, res) => {
         setTimeout(() => {
             res.status(200).send({mobNo, otp: true})
         }, 2000)
+    }
+}
+export const checkOtp = async (req, res, next) => {
+    try {
+        const { mobNo, otp } = req.body;
+        const existingUser = await User.findOne({ mobNo });
+        console.log(existingUser, "😀");
+        // TODO: FIXME: need otp api call here... 
+        if(existingUser) {
+            // TODO:
+        } else {
+            if(!!mobNo && (otp === 5555)) {
+                const user = await User.create({ mobNo });
+                const token = createSecretToken(user._id);
+                res.cookie("token", token, {
+                    withCredentials: true,
+                    httpOnly: false,
+                  });
+                  res
+                    .status(201)
+                    .json({ message: "User signed in successfully", success: true, user });
+                  next();
+            }
+        }
+    } catch (error) {
+        console.log(error);
     }
 }
 

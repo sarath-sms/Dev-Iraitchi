@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 4000;
 
 // mongo connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/IRAITCHI')
+mongoose.connect(process.env.DB_URI || 'mongodb://localhost/irai')
                 .then(() => console.log('📀📀📀 mongodb connected 📀📀📀'))
                 .catch((err) => console.log('🤬🤬🤬🤬🤬 Mongo connection issue', err));
 
