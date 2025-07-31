@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 import bodyparser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import routes from './routes/iraitchiRoutes';
+import routes from './routes/routes';
+import { checkMobNo } from './controllers/userControllers';
 
 const app = express();
 

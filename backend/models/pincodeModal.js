@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema
 
-export const UserSchema = new Schema({
-    mobNo: {
+export const PincodeSchema = new Schema({
+    pincode: {
         type: Number,
-        required: [true, "Enter your mobile number!"],
+        required: [true, "Please Add Your Pin Code"],
         unique: true
     }
 })

@@ -1,4 +1,5 @@
 // Note: kindly add children favorite on category list
+// refer https://www.youtube.com/watch?v=enopDSs3DRw&ab_channel=TraversyMedia for authentication
 const products = {
     id: "",
     name: "",
@@ -8,6 +9,7 @@ const products = {
     quantity: "", // 1/4, 1/2, 3/4, 1, 2 ::: 🧮 calc needed
     buyingPrice: "",
     pricePerKg: "",
+    meatFor: "", // fry, curry, gravy, other
     quantityAfterCleaning: "", // in grams kind off!👌🏼
     categories: "",
     image: "",
@@ -59,3 +61,4 @@ const isDelivered = {
     orderId: "", // uuid from backend
     status: ["PACKING", "DISPATCHED", "DELIVERED"],
 };
+

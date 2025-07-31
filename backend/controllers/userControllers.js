@@ -4,14 +4,24 @@ import bcrypt from "bcrypt";
 
 const User = mongoose.model('User', UserSchema);
 
+export const checkMobNo = async (req, res) => {
+    const { mobNo } = req.query;
+    if(mobNo) {
+        setTimeout(() => {
+            res.status(200).send({mobNo, otp: true})
+        }, 2000)
+    }
+}
+
+
 export const addNewUser = async (req, res) => {
     try {
         const {mobNo, password} = req.body;
-        const salt = await bcrypt.genSalt();
-        const hashedPassword = await bcrypt.hash(password, salt);
+        // const salt = await bcrypt.genSalt();
+        // const hashedPassword = await bcrypt.hash(password, salt);
         const dbUser = {
             mobNo,
-            password: hashedPassword
+            // password: hashedPassword
         }
         const User = await newUser.save();
         let newUser = new User(dbUser);
