@@ -29,7 +29,7 @@ const addressSchema = new Schema({
   // Enable geospatial index
 addressSchema.index({ location: '2dsphere' });
 
-export const UserSchema = new Schema({
+const UserSchema = new Schema({
     mobNo: {
         type: Number,
         required: [true, "Enter your mobile number!"],
@@ -55,3 +55,5 @@ export const UserSchema = new Schema({
         default: Date.now
     }
 })
+
+export const User = mongoose.model('User', UserSchema);
