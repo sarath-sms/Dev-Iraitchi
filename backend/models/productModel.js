@@ -38,3 +38,5 @@ export const ProductSchema = new Schema({
     quantityAfterCleaning: String, // in grams kind off!👌🏼,
     createdAt: Date,
 });
+
+export const Product = mongoose.model('Product', ProductSchema);

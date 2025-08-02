@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
-import { ProductSchema } from "../models/productModel";
+import { Product } from "../models/productModel";
 
-const Product = mongoose.model('Product', ProductSchema);
 
 export const addNewProduct = async (req, res) => {
     console.log("working")
