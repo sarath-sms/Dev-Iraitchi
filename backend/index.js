@@ -4,6 +4,7 @@ import bodyparser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import routes from './routes/routes';
+import cookieParser from 'cookie-parser';
 import { checkMobNo } from './controllers/userControllers';
 
 const app = express();
@@ -21,6 +22,7 @@ mongoose.connect(process.env.DB_URI || 'mongodb://localhost/irai')
 
 // body-parser
 app.use(bodyparser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(bodyparser.json());
 
 // cors
