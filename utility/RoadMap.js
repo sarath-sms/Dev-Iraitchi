@@ -1,12 +1,12 @@
 /*
 user login - completed
 user authentication - completed
-admin login with hashed password
+admin login with hashed password - completed
 CRUD - driver
-driver login with hashed password
+driver login with passcode
 CRUD-products with image upload.
 
-user - place order.
+user - place order. start and end time should added
 user - address api with google map
 
 admin/driver - order list along with status:
