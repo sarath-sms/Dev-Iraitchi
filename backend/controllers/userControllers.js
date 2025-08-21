@@ -1,6 +1,4 @@
-import mongoose from "mongoose";
 import { User } from "../models/userModel";
-import bcrypt from "bcrypt";
 import { createSecretToken } from "../utils/SecretToken";
 
 
@@ -17,7 +15,7 @@ export const checkOtp = async (req, res, next) => {
     try {
         const { mobNo, otp } = req.body;
         const existingUser = await User.findOne({ mobNo });
-        console.log(existingUser, "😀");
+        // console.log(existingUser, "😀");
         // TODO: FIXME: need otp api call here... 
         if(existingUser?._id) {
             // TODO:

@@ -13,6 +13,16 @@ admin/driver - order list along with status:
 1. admin - status can update buying | cutting | packed | asign driver
 2. driver - delivered | update customers lat & long | description
 
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+---------------------------------------------------------------------------
+
+admin going to create new driver
+
+
+driver login
+
+driver homepage (assigned orders, order list)
 
 
 

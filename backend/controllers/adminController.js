@@ -6,7 +6,6 @@ export const createIraiAdmin = async (req, res, next) => {
     try {
       const { email, password, IraiAdminName, createdAt } = req.body;
       const existingIraiAdmin = await IraiAdmin.findOne({ email });
-      console.log(existingIraiAdmin)
       if (existingIraiAdmin) {
         return res.json({ message: "IraiAdmin already exists" });
       }
