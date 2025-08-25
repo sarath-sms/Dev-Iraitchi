@@ -32,7 +32,7 @@ export const listIraiDrive = async (req, res, next) => {
 
 export const viewIraiDrive = async (req, res, next) => {
     try {   
-        const iraiDrives = await IraiDrive.findOne();
+        const iraiDrives = await IraiDrive.findOne({_id: req?.params?.id});
         res.status(200).json(iraiDrives);
     } catch (error) {
         res.status(500).json({ message: "Something Went Wrong. Please Try Again Later", success: true, error });
