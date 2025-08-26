@@ -5,16 +5,20 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), VitePWA({
+    build: {
+      outDir: 'build' // ← change output folder name here
+    },
     strategies: 'injectManifest',
     srcDir: 'src',
     filename: 'sw.js',
     registerType: 'autoUpdate',
-    injectRegister: false,
+    injectRegister: "script", // value changed false to script
 
     manifest: {
       name: 'frontend',
       short_name: 'iraitchi',
-      description: 'built using @vite-pwa/p wa@latest .-- --template react',
+      description: 'iraitchi.com is an online platform that connects end customers with a wide range of fresh, high-quality meats—sourced directly from the market. We make it easy, fast, and reliable for you to order your choice of meat from the comfort of your home.', // built using @vite-pwa/p wa@latest .-- --template react
+      background_color: "#26355D",
       theme_color: '#ffeb3b',
       icons: [{
         src: 'pwa-64x64.png',
@@ -41,10 +45,16 @@ export default defineConfig({
     },
 
     devOptions: {
-      enabled: true, // false before deployment changes
+      enabled: true, // changes value false to true
       navigateFallback: 'index.html',
       suppressWarnings: true,
       type: 'module',
     },
+    workbox: {
+      additionalManifestEntries: [
+        { url: "/index.html", revision: Date.now().toString() } // forces update
+      ]
+    }
   })],
 })
+
