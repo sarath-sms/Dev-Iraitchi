@@ -4,14 +4,14 @@ const products = {
     id: "",
     name: "",
     typeOfCuts: "",
-    cleanType: "", // plainWater, turmeric, turmericAndRockSallt 🧂
+    // cleanType: "", // plainWater, turmeric, turmericAndRockSallt 🧂
     size: "", // tiny, small, medium, large, big
     quantity: "", // 1/4, 1/2, 3/4, 1, 2 ::: 🧮 calc needed
-    buyingPrice: "",
+    // buyingPrice: "",
     pricePerKg: "",
-    meatFor: "", // fry, curry, gravy, other
     quantityAfterCleaning: "", // in grams kind off!👌🏼
     categories: "",
+    availability: true,
     image: "",
 };
 const productUpdates = {

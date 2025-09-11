@@ -4,10 +4,10 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    outDir: 'build' // ← change output folder name here
+  },
   plugins: [react(), VitePWA({
-    build: {
-      outDir: 'build' // ← change output folder name here
-    },
     strategies: 'injectManifest',
     srcDir: 'src',
     filename: 'sw.js',

@@ -1,0 +1,16 @@
+.iraiContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+aside, main {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    aside {
+        display: none;
+    }
+}
