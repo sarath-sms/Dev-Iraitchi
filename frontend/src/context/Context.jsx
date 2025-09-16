@@ -1,7 +1,14 @@
-import React from 'react'
+import React, {useState, createContext} from 'react'
 
-export default function Context() {
+const IraiContextContainer = createContext();
+
+export default function IraiContext({children}) {
+  const [iraiData, setIraiData] = useState({
+    name: "sarath"
+  })
   return (
-    <div>Context</div>
+    <IraiContextContainer.Provider value={{iraiData, setIraiData}}>
+      {children}
+    </IraiContextContainer.Provider>
   )
 }

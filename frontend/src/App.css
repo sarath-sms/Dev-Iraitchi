@@ -8,9 +8,31 @@
 aside, main {
     flex: 1;
 }
+main {
+    height: 100dvh;
+}
+
+.mainContainer {
+    padding: 14px 0 14px;
+    height: calc(100% - 50px);
+    overflow: hidden;
+    position: relative;
+}
+footer {
+    padding: 12px 24px;
+}
+.iraiScreen {
+    height: calc(100% - 80px);
+    padding: 12px 24px;
+    overflow: auto;
+}
+
 
 @media (max-width: 768px) {
     aside {
         display: none;
+    }
+    footer {
+        box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.3);
     }
 }

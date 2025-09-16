@@ -1,3 +1,12 @@
+:root {
+  --primary: #FFEB3B;
+  --secondary: #26355D;
+  --success: #EDFF22;
+  --error: #FF5722;
+  --collapseBg: rgba(255, 255, 255, 0.1);
+  --disabled: rgba(173, 173, 173, 0.9);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,16 +23,23 @@ html, body {
   overflow: hidden;
   overscroll-behavior: none;
   touch-action: manipulation;
-  background: #26355D;
-  color: #FFEB3B;
+  background: var(--secondary);
+  color: var(--primary);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
-
-/* 2) Full-viewport app shell with safe-area support */
-:root {
-  /* Fallbacks for browsers without dvh support */
-  --vh: 100dvh; /* prefers dvh to avoid URL bar issues */
+input::placeholder {
+  color: var(--secondary);
+  opacity: 0.6;
 }
 
+/* 2) Full-viewport app shell with safe-area support 
+:root {
+  Fallbacks for browsers without dvh support
+  --vh: 100dvh; /* prefers dvh to avoid URL bar issues
+} */
+
 /* 7) Prevent pinch-zoom on buttons (optional) */
-button { touch-action: manipulation; }
+button { 
+  touch-action: manipulation;
+  cursor: pointer;
+}

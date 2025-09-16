@@ -53,7 +53,8 @@ export default defineConfig({
     workbox: {
       additionalManifestEntries: [
         { url: "/index.html", revision: Date.now().toString() } // forces update
-      ]
+      ],
+      exclude: [/\/@vite\//, /\/@react-refresh\//, /\.map$/, /manifest\.json$/],
     }
   })],
 })

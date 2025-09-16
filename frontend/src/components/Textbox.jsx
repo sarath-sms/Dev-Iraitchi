@@ -1,0 +1,25 @@
+import React from 'react'
+import styled from 'styled-components'
+
+export default function Textbox({value = '', placeholder, className, onChange, inputmode = "email", maxLength = 200}) {
+  return <TextStyle type="text" className={className && className} defaultValue={value} placeholder={placeholder} onChange={onChange && onChange} inputMode={inputmode} maxLength={maxLength} />
+}
+
+
+const TextStyle = styled.input`
+    padding: 0.6em;
+    font-size: 1.4em;
+    border-radius: 0.4em;
+    width: 100%;
+    color: var(--secondary);
+    border-color: var(--primary);
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 10px 0 var(--secondary) inset, 0 0 10px 4px var(--primary);
+    }
+    /* &:not(:placeholder-shown) {
+      letter-spacing: 10px;
+      background: transparent; 
+      color: var(--primary);
+    } */
+`
