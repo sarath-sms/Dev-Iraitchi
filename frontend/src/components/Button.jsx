@@ -44,7 +44,7 @@ const BtnStyle = styled.button({
     "&.tiny": {
         padding: "0.3em 0.6em",
         background: "var(--success)",
-        fontsize: "14px",
+        fontSize: "14px",
         boxShadow: "0 0 40px 40px var(--success) inset, 0 0 0 0 var(--success)",
         borderColor: "var(--success)",
         borderRadius: "0.2em",
