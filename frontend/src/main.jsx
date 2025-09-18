@@ -11,6 +11,9 @@ import UserLogin from './pages/user/UserLogin.jsx';
 import Documentation from './pages/Documentation.jsx';
 import VerifyOtp from './pages/user/VerifyOtp.jsx';
 import Products from './pages/user/Products.jsx';
+import Cart from './pages/user/Cart.jsx';
+import Feedback from './pages/user/Feedback.jsx';
+import Profile from './pages/user/Profile.jsx';
 
 registerSW({ immediate: true });
 
@@ -19,11 +22,16 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />, // layout component
     children: [
-      { element: <Home />,
+      {
+        element: <Home />,
         children: [
           { path: "documentation", element: <Documentation /> },
           { path: "login", element: <UserLogin /> },
           { path: "verifyOtp", element: <VerifyOtp /> },
+          { path: "products", element: <Products /> },
+          { path: "cart", element: <Cart /> },
+          { path: "feedback", element: <Feedback /> },
+          { path: "profile", element: <Profile /> },
           { path: "products", element: <Products /> },
           { path: "iraiAdmin", element: <UserLogin /> }
         ]

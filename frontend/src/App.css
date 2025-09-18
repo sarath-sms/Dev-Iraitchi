@@ -10,6 +10,7 @@ aside, main {
 }
 main {
     height: 100dvh;
+    position: relative;
 }
 
 .mainContainer {

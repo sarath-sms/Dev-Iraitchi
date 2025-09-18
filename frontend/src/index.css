@@ -5,6 +5,7 @@
   --error: #FF5722;
   --collapseBg: rgba(255, 255, 255, 0.1);
   --disabled: rgba(173, 173, 173, 0.9);
+  --font-medium: 16px;
 }
 
 * {

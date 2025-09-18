@@ -4,21 +4,26 @@ import PWABadge from './PWABadge.jsx' // need to analyse dont remove
 import './App.css'
 import Documentation from './pages/Documentation.jsx';
 import Nav from './components/Nav.jsx';
+import Popup from './components/Popup.jsx';
+import styled from 'styled-components';
 
-function App() {
+export default function App() {
 
   return (
     <>
-      <div className='iraiContainer'>
+      <MainStyle className='iraiContainer'>
         <aside></aside>
         <main>
+          <Popup />
           <Nav />
           <Outlet />
         </main>
-      </div>
+      </MainStyle>
         <PWABadge />
     </>
   )
 }
 
-export default App
+const MainStyle = styled.div`
+`
+
