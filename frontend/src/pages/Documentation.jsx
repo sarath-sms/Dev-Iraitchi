@@ -24,6 +24,10 @@ export default function Documentation() {
         const {setPopup} = useContext(IraiContextContainer)
         const openPopup = () => setPopup({open: true, content: <>component</>})
       
+        // storage.jsx 
+        setEncryptedItem("iraiData", { id: 1, name: "Sarath Kumar" });
+        getDecryptedItem("iraiData")
+        removeItem("iraiData")
         */}
       <div className="docNode redirections">
         <Button className="tiny" label="products" onClick={() => navigate('/products')} />
