@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import OtpInput from 'react-otp-input';
 import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import TimerResend from '../../components/TimerResend';
+import { IraiContextContainer } from '../../context/Context';
 
 export default function VerifyOtp() {
+  const {userData: {mobile, iraiVerify = false}, setUserData} = useContext(IraiContextContainer)
     const navigate = useNavigate()
     // need to do TODO
     // same functionality for resend otp
@@ -21,13 +23,19 @@ export default function VerifyOtp() {
     */
     const [otp, setOtp] = useState('');
     const [error, setError] = useState('');
+    const [btnDisable, setBtnDisable] = useState(true)
 
     function verifyOtp() {
-        // setError('Incorrect OTP')
-        navigate('/products');
+        if(otp === "5555") {
+          navigate('/products');
+          setUserData(prev => ({...prev, iraiVerify: true}));
+        } else {
+          setError('Incorrect OTP');
+        }
     }
 
     useEffect(() => {
+      if(iraiVerify) return navigate('/products');
         // ✅ Auto-detect OTP via Web OTP API (Android Chrome)
         if ("OTPCredential" in window) {
           const ac = new AbortController();
@@ -48,7 +56,11 @@ export default function VerifyOtp() {
       }, []);
 
       useEffect(() => {
-        setError('')
+        if(otp.length === 4) {
+          setBtnDisable(false);
+        } else {
+          setBtnDisable(true);
+        }
       }, [otp])
 
   return (
@@ -68,7 +80,7 @@ export default function VerifyOtp() {
             </div>
         </section>
         <footer>
-            <Button className="primary" label="VERIFY OTP" disable={false} onClick={verifyOtp} />
+            <Button className="primary" label="VERIFY OTP" disable={btnDisable} onClick={verifyOtp} />
         </footer>
     </Style>
   )

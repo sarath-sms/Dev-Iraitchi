@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Button from '../../components/Button';
 import Textbox from '../../components/Textbox';
 import { useNavigate } from 'react-router-dom';
+import { IraiContextContainer } from '../../context/Context';
+import { testRegex } from '../utils/commonFunctions';
 
 export default function UserLogin() {
 
+  const {userData: {mobile, iraiVerify = false}, setUserData} = useContext(IraiContextContainer)
   const navigate = useNavigate();
+
+  const [btnDisable, setBtnDisable] = useState(true);
 
   function proceed() {
     navigate('/verifyOtp');
+  }
+
+  useEffect(() => {
+    if(iraiVerify) {
+      navigate('/products');
+    }
+  }, [])
+
+  useEffect(() => {
+    if(testRegex(/^[6789]\d{9}$/, mobile)) {
+      setBtnDisable(false)
+    } else {
+      setBtnDisable(true)
+    }
+  }, [mobile])
+
+  function handleMobile(e) {
+    setUserData(prev => ({...prev, mobile: e.target.value}))
   }
 
   return (
@@ -21,10 +44,10 @@ export default function UserLogin() {
             <br/><br/>Your number is safe with us - no spam, <br /> <b>only value!</b>
           </p>
         </div>
-        <Textbox className="mobTxt" maxLength={10} placeholder="Enter Your Mobile Number" inputmode="numeric" />
+        <Textbox className="mobTxt" value={mobile} onChange={handleMobile} maxLength={10} placeholder="Enter Your Mobile Number" inputmode="numeric" />
       </section>
       <footer>
-        <Button className="primary" label="ENTER" disable={false} onClick={proceed} />
+        <Button className="primary" label="ENTER" disable={btnDisable} onClick={proceed} />
       </footer>
     </Style>
   )

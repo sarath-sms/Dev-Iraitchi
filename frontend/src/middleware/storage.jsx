@@ -1,8 +1,7 @@
 // utils/storage.js
 import CryptoJS from "crypto-js";
 
-const SECRET_KEY = process.env.REACT_APP_SECRET_KEY; // Ideally store in env file
-
+const SECRET_KEY = import.meta.env.VITE_SECRET_KEY; // Ideally store in env file
 
 // Encrypt and store in localStorage
 export const setEncryptedItem = (key, value) => {

@@ -28,6 +28,9 @@ export default function Documentation() {
         setEncryptedItem("iraiData", { id: 1, name: "Sarath Kumar" });
         getDecryptedItem("iraiData")
         removeItem("iraiData")
+
+        // regex check
+        testRegex(regex, str) // true or false
         */}
       <div className="docNode redirections">
         <Button className="tiny" label="products" onClick={() => navigate('/products')} />

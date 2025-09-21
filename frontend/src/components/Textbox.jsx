@@ -8,7 +8,7 @@ export default function Textbox({value = '', placeholder, disabled = false, clas
 
 const TextStyle = styled.input`
     padding: 0.6em;
-    font-size: 1.4em;
+    font-size: 1.2em;
     border-radius: 0.4em;
     width: 100%;
     color: var(--secondary);

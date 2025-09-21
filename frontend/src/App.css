@@ -28,6 +28,9 @@ footer {
     overflow: auto;
 }
 
+.error {
+    color: var(--error);
+}
 
 @media (max-width: 768px) {
     aside {

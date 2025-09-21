@@ -3,6 +3,7 @@ import muttonImage from '../../assets/temp/muttonImage.jpg'
 
 export const fishes = [
     {
+        id: '1',
         name: "Seer Fish / Vanjaram",
         category: "fish",
         subCategory: 'sea food',
@@ -43,6 +44,7 @@ export const fishes = [
         ]
     },
     {
+        id: '2',
         name: "Lovely / Vanjaram",
         category: "fish",
         subCategory: 'sea food',
@@ -83,6 +85,7 @@ export const fishes = [
         ]
     },
     {
+        id: '3',
         name: "Seer Fish / Vanjaram",
         category: "fish",
         subCategory: 'sea food',
@@ -123,6 +126,7 @@ export const fishes = [
         ]
     },
     {
+        id: '4',
         name: "Seer Fish / Vanjaram",
         category: "fish",
         subCategory: 'sea food',
@@ -163,6 +167,7 @@ export const fishes = [
         ]
     },
     {
+        id: '5',
         name: "Seer Fish / Vanjaram",
         category: "fish",
         subCategory: 'sea food',
@@ -199,6 +204,7 @@ export const fishes = [
         ]
     },
     {
+        id: '6',
         name: "Seer Fish / Vanjaram",
         category: "fish",
         subCategory: 'sea food',
@@ -235,6 +241,7 @@ export const fishes = [
         ]
     },
     {
+        id: '7',
         name: "Seer Fish / Vanjaram",
         category: "fish",
         subCategory: 'sea food',
@@ -274,6 +281,7 @@ export const fishes = [
 
 export const meat = [
     {
+        id: 'm1',
         name: 'Goat | Mutton',
         category: 'meat',
         subCategory: 'black goat',
