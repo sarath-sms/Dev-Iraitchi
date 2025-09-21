@@ -7,7 +7,7 @@ export default function ProductList({products = []}) {
 
   return (
     <ProductListStyle>
-        {!!products.length ? products.map((product, i) => <ProductCard key={`product_${i}`} product={product} />) : "No Items Listed"}
+      {!!products.length ? products.map((product, i) => <ProductCard key={`product_${i}`} product={product} />) : "No Items Listed"}
     </ProductListStyle>
   )
 }

@@ -8,7 +8,126 @@ export const fishes = [
         subCategory: 'sea food',
         description: "good for eye, lungs",
         image: fishImage,
-        openPopup: true,
+        price: [
+            {
+                type: "Small",
+                price: 700,
+                grossWeight: "1kg - 1.15kg",
+                netWeight: '0.7kg - 0.8kg',
+                available: true,
+            },
+            {
+                type: "Medium",
+                price: 800,
+                grossWeight: "1kg - 1.15kg",
+                netWeight: '0.7kg - 0.8kg',
+                available: true,
+            },
+            {
+                type: "Large",
+                price: 900,
+                grossWeight: "1kg - 1.15kg",
+                netWeight: '0.7kg - 0.8kg',
+                available: true,
+            }
+        ],
+        cutTypes: [
+            {
+                type: "Slice",
+                price: 25 // mention per kg
+            },
+            {
+                type: "Curry Cut",
+                price: 25 // mention per kg
+            }
+        ]
+    },
+    {
+        name: "Lovely / Vanjaram",
+        category: "fish",
+        subCategory: 'sea food',
+        description: "good for eye, lungs",
+        image: fishImage,
+        price: [
+            {
+                type: "Small",
+                price: 700,
+                grossWeight: "1kg - 1.15kg",
+                netWeight: '0.7kg - 0.8kg',
+                available: true,
+            },
+            {
+                type: "Medium",
+                price: 800,
+                grossWeight: "1kg - 1.15kg",
+                netWeight: '0.7kg - 0.8kg',
+                available: true,
+            },
+            {
+                type: "Large",
+                price: 900,
+                grossWeight: "1kg - 1.15kg",
+                netWeight: '0.7kg - 0.8kg',
+                available: true,
+            }
+        ],
+        cutTypes: [
+            {
+                type: "Slice",
+                price: 25 // mention per kg
+            },
+            {
+                type: "Curry Cut",
+                price: 25 // mention per kg
+            }
+        ]
+    },
+    {
+        name: "Seer Fish / Vanjaram",
+        category: "fish",
+        subCategory: 'sea food',
+        description: "good for eye, lungs",
+        image: fishImage,
+        price: [
+            {
+                type: "Small",
+                price: 700,
+                grossWeight: "1kg - 1.15kg",
+                netWeight: '0.7kg - 0.8kg',
+                available: true,
+            },
+            {
+                type: "Medium",
+                price: 800,
+                grossWeight: "1kg - 1.15kg",
+                netWeight: '0.7kg - 0.8kg',
+                available: true,
+            },
+            {
+                type: "Large",
+                price: 900,
+                grossWeight: "1kg - 1.15kg",
+                netWeight: '0.7kg - 0.8kg',
+                available: true,
+            }
+        ],
+        cutTypes: [
+            {
+                type: "Slice",
+                price: 25 // mention per kg
+            },
+            {
+                type: "Curry Cut",
+                price: 25 // mention per kg
+            }
+        ]
+    },
+    {
+        name: "Seer Fish / Vanjaram",
+        category: "fish",
+        subCategory: 'sea food',
+        description: "good for eye, lungs",
+        image: fishImage,
         price: [
             {
                 type: "Small",
@@ -49,7 +168,6 @@ export const fishes = [
         subCategory: 'sea food',
         discription: "good for eye, lungs",
         image: fishImage,
-        openPopup: true,
         price: [
             {
                 type: "Small",
@@ -86,7 +204,6 @@ export const fishes = [
         subCategory: 'sea food',
         discription: "good for eye, lungs",
         image: fishImage,
-        openPopup: true,
         price: [
             {
                 type: "Small",
@@ -123,7 +240,6 @@ export const fishes = [
         subCategory: 'sea food',
         discription: "good for eye, lungs",
         image: fishImage,
-        openPopup: true,
         price: [
             {
                 type: "Small",

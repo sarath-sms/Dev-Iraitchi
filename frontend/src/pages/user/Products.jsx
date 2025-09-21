@@ -11,7 +11,7 @@ import { IraiContextContainer } from '../../context/Context';
 
 export default function Products() {
 
-  const {iraiData} = useContext(IraiContextContainer)
+  const {iraiData} = useContext(IraiContextContainer);
 
   console.log(iraiData, "context from main js file is working fine")
   

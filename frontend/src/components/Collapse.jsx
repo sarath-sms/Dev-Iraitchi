@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 
-export default function Collapse({isOpen = true,label, name, options = []}) {
+export default function Collapse({isOpen = true,label, name, options, comp, className}) {
 
     const [open, setOpen] = useState(isOpen);
     const [selectedItems, setSelectedItems] = useState([])
@@ -16,14 +16,15 @@ export default function Collapse({isOpen = true,label, name, options = []}) {
     }
 
   return (
-    <CollapseStyle>
+    <CollapseStyle className={className}>
         <Button
             className="isOpen"
             onClick={toggleOpen}
             label={<><span>{label}</span> <i className={`collapseArrow ${open ? 'down' : 'up'}`}></i></>}
         />
         <div className={`collapseOptions ${open ? 'show' : 'hide'}`}>
-            {options?.map((node, i) => <div className={`selectOption`} onClick={() => selectItem(node)} key={name+i}> {node?.label} </div>)}
+            {options && options?.map((node, i) => <div className={`selectOption`} onClick={() => selectItem(node)} key={name+i}> {node?.label} </div>)}
+            {comp && comp}
         </div>
     </CollapseStyle>
   )

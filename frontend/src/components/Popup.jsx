@@ -39,4 +39,19 @@ const PopupStyle = styled.div`
     height: 100%;
     width: 100%;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .popupContent {
+      background-color: var(--secondary);
+      width: calc(100% - 32px);
+      margin: auto;
+      padding: 24px 16px;
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 `

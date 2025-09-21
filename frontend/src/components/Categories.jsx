@@ -52,6 +52,8 @@ const CategoryStyle = styled.div`
     top: 0;
     z-index: 1;
     background-color: var(--secondary);
+    padding-bottom: 16px;
+    box-shadow: 0 12px 6px -6px rgba(0, 0, 0, 0.3);
     .categoryMenu {
 
     }

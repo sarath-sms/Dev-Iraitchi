@@ -6,6 +6,7 @@
   --collapseBg: rgba(255, 255, 255, 0.1);
   --disabled: rgba(173, 173, 173, 0.9);
   --font-medium: 16px;
+  --shadow: rgba(255 235 59 / 33%) 0px 3px 12px 0px;;
 }
 
 * {
@@ -28,9 +29,27 @@ html, body {
   color: var(--primary);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
+
+button {
+  border: none;
+}
 input::placeholder {
   color: var(--secondary);
   opacity: 0.6;
+}
+
+.iraiScreen::-webkit-scrollbar {
+  width: 3px;
+}
+
+.iraiScreen::-webkit-scrollbar-track {
+  background: #303952;
+  border-radius: 2px;
+}
+
+.iraiScreen::-webkit-scrollbar-thumb {
+  background: #ada34c52;
+  border-radius: 2px;
 }
 
 /* 2) Full-viewport app shell with safe-area support 
