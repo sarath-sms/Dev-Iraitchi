@@ -13,8 +13,6 @@ export default function Products() {
 
   const {iraiData} = useContext(IraiContextContainer);
 
-  console.log(iraiData, "context from main js file is working fine")
-  
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('fish')
   // const [productList, setProductList] = useState([])

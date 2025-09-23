@@ -36,11 +36,14 @@ const BtnStyle = styled.button({
         background: "var(--secondary)",
         boxShadow: "0 0 40px 40px var(--secondary) inset, 0 0 0 0 var(--secondary)",
         color: "var(--primary)",
+        "&:disabled": {
+            color: "var(--secondary)"
+        },
         "&:hover, &:focus": {
         color: "var(--secondary)",
         outline: "0",
         background: "var(--primary)",
-        boxShadow: "0 0 10px 0 var(--primary) inset, 0 0 10px 4px var(--secondary)"
+        boxShadow: "0 0 10px 0 var(--primary) inset, 0 0 10px 4px var(--secondary)",
     },
     },
     "&.tiny": {

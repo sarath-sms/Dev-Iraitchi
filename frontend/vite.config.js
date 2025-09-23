@@ -4,6 +4,10 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {  // server key and value should remove before deploying|
+    host: true,  
+    port: 5173
+  },
   build: {
     outDir: 'build' // ← change output folder name here
   },

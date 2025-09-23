@@ -2,33 +2,35 @@ import fishImage from '../../assets/temp/fishImage.jpg'
 import muttonImage from '../../assets/temp/muttonImage.jpg'
 
 export const fishes = [
+    // in backend remove the node|object if available is false
     {
         id: '1',
-        name: "Seer Fish / Vanjaram",
+        name: "Vanjaram | All Fields",
         category: "fish",
         subCategory: 'sea food',
         description: "good for eye, lungs",
         image: fishImage,
+        available: true,
         price: [
             {
                 type: "Small",
                 price: 700,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Medium",
                 price: 800,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Large",
                 price: 900,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             }
         ],
@@ -45,31 +47,32 @@ export const fishes = [
     },
     {
         id: '2',
-        name: "Lovely / Vanjaram",
+        name: "Vanjaram | Unavailable",
         category: "fish",
         subCategory: 'sea food',
         description: "good for eye, lungs",
         image: fishImage,
+        available: false,
         price: [
             {
                 type: "Small",
                 price: 700,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Medium",
                 price: 800,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Large",
                 price: 900,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             }
         ],
@@ -86,31 +89,18 @@ export const fishes = [
     },
     {
         id: '3',
-        name: "Seer Fish / Vanjaram",
+        name: "Seer Fish | only small",
         category: "fish",
         subCategory: 'sea food',
         description: "good for eye, lungs",
         image: fishImage,
+        available: true,
         price: [
             {
                 type: "Small",
                 price: 700,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
-                available: true,
-            },
-            {
-                type: "Medium",
-                price: 800,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
-                available: true,
-            },
-            {
-                type: "Large",
-                price: 900,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             }
         ],
@@ -127,33 +117,27 @@ export const fishes = [
     },
     {
         id: '4',
-        name: "Seer Fish / Vanjaram",
+        name: "Vanjaram | S and M",
         category: "fish",
         subCategory: 'sea food',
         description: "good for eye, lungs",
         image: fishImage,
+        available: true,
         price: [
             {
                 type: "Small",
                 price: 700,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Medium",
                 price: 800,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
-            {
-                type: "Large",
-                price: 900,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
-                available: true,
-            }
         ],
         cutTypes: [
             {
@@ -168,31 +152,25 @@ export const fishes = [
     },
     {
         id: '5',
-        name: "Seer Fish / Vanjaram",
+        name: "Seer Fish / S and L",
         category: "fish",
         subCategory: 'sea food',
         discription: "good for eye, lungs",
         image: fishImage,
+        available: true,
         price: [
             {
                 type: "Small",
                 price: 700,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
-                available: true,
-            },
-            {
-                type: "Medium",
-                price: 800,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Large",
                 price: 900,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             }
         ],
@@ -210,26 +188,27 @@ export const fishes = [
         subCategory: 'sea food',
         discription: "good for eye, lungs",
         image: fishImage,
+        available: true,
         price: [
             {
                 type: "Small",
                 price: 700,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Medium",
                 price: 800,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Large",
                 price: 900,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             }
         ],
@@ -247,26 +226,27 @@ export const fishes = [
         subCategory: 'sea food',
         discription: "good for eye, lungs",
         image: fishImage,
+        available: true,
         price: [
             {
                 type: "Small",
                 price: 700,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Medium",
                 price: 800,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             },
             {
                 type: "Large",
                 price: 900,
-                grossWeight: "1kg - 1.15kg",
-                netWeight: '0.7kg - 0.8kg',
+                // grossWeight: "1kg - 1.15kg",
+                // netWeight: '0.7kg - 0.8kg',
                 available: true,
             }
         ],
@@ -287,7 +267,7 @@ export const meat = [
         subCategory: 'black goat',
         description: '',
         image: muttonImage,
-        openPopup: false,
+        available: true,
         netWeight: '1kg',
         price: 920,
     }

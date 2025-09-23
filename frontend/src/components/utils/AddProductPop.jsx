@@ -1,71 +1,89 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import productImg from '../../assets/temp/fishImage.jpg'
 import Button from '../Button'
 import RadioBtn from '../RadioBtn'
 import { useNavigate } from 'react-router-dom'
 import { IraiContextContainer } from '../../context/Context'
+import SizeAndCuts from './SizeAndCuts'
+import { removeFalsy } from '../../pages/utils/commonFunctions'
+import PincodePop from './PincodePop'
 
 export default function AddProductPop({picked}) {
     const {
-        name,
-        cutTypes = null,
-        description, image, price,
-        subCategory, category
+        id, name, cutTypes = null, description, image = '', price
     } = picked
-    const {setPopup} = useContext(IraiContextContainer);
+    const {userData: {pincode}, setPopup, setIraiData} = useContext(IraiContextContainer);
     const navigate = useNavigate();
 
-    function handleToCart() {
-        navigate('/cart');
-        setPopup({open:false});
+    const [item, setItem] = useState({
+        id,
+        name,
+        count: 1,
+        // price: 800,
+        cuts: null
+    })
+    
+    function handleBuyNow() {
+        const saveItem = removeFalsy(item);
+        setIraiData(prev => ([...prev, saveItem]));
+        if(!!pincode) {
+            setPopup({open:false});
+            navigate('/cart');
+        } else {
+            setPopup({open:true, content: <PincodePop path="/cart" />});
+        }
     }
+
+    function handleAddToCart() {
+        const saveItem = removeFalsy(item)
+        setIraiData(prev => ([...prev, saveItem]));
+        if(!!pincode) {
+            setPopup({open:false});
+        } else {
+            setPopup({open:true, content: <PincodePop path="/cart" />});
+        }
+    }
+
+    function handleCount(val) {
+        let count = item.count
+        if(val === "add") {
+            setItem(prev => ({...prev, count: count + 0.5 }))
+        } else if(val === "sub") {
+            if(count > 0.5) {
+                setItem(prev => ({...prev, count: count - 0.5 }))
+            } else {
+                setPopup({open:false});
+            }
+        }
+    }
+
+    function handleSizeAndCuts(obj) {
+        setItem(prev => ({...prev, ...obj }))
+    }
+
   return (
     <AddProductStyle>
-        {/* <h2>{name}</h2>
-        {image && "in image tag"}
-        {!!cutTypes && "radio button with cut types"}
-        {price && "in h2 tag"}
-        {(category && subCategory) && "category and subcategory in small font"}
-        {description && "collapse"} */}
         <div className="titleCard">
-            <img className="productImg" src={productImg} alt="irai image" />
+            <img className="productImg" src={image} alt="irai image" />
             <div className="titleContent">
-                <p>Vanjaram | blabla | blablabla</p>
-                <h4>Price: <span>{'800'}</span>/kg <span className="isAvail">available</span></h4>
+                <p className='name'>{name}</p>
+                <h4>Price: <span>{item?.price}</span>/kg</h4>
             </div>
         </div>
         <div className="quantitySec">
             <div className="quantityAction">
-                <button> - </button>
-                <span className="quantityCount"> 2 </span>
-                <button> + </button>
+                <button onClick={() => handleCount("sub")}> - </button>
+                <span className="quantityCount"> {item?.count} </span>
+                <button onClick={() => handleCount("add")}> + </button>
             </div>
-            <h2 className="priceSec"> Rs. {'1600'} </h2>
+            <h2 className="priceSec"> Rs. {item?.price * item?.count} </h2>
         </div>
 
-        <div className="cutTypes">
-            <h3>Type of Cuts:</h3>
-            <p className="quote">Basic is to remove its scales, fins, and internal organs</p>
-            <div className="cutList">
-                <RadioBtn label="Full fish with slice line" />
-                <RadioBtn label="Slice cut with head and tail" />
-                <RadioBtn label="Slice cut without head" />
-            </div>
-        </div>
-
-        <div className="sizeSec">
-            <h3>Size:</h3>
-            <div className="sizeList">
-                <RadioBtn label="Small" />
-                 <RadioBtn label="Medium" />
-                <RadioBtn label="Large" />
-            </div>
-        </div>
+        <SizeAndCuts price={price} cuts={cutTypes} action={handleSizeAndCuts} />
 
         <div className="actionSection">
-            <Button className="secondary" label="BUY NOW" disable={false}  />
-            <Button className="primary" label="ADD TO CART" onClick={handleToCart} disable={false}  />
+            <Button className="secondary" label="BUY NOW" onClick={handleBuyNow} />
+            <Button className="primary" label="ADD TO CART" onClick={handleAddToCart} />
         </div>
     </AddProductStyle>
   )
@@ -73,9 +91,14 @@ export default function AddProductPop({picked}) {
 
 const AddProductStyle = styled.div`
    max-height: calc(100% - 30px);
+   width: 100%;
    overflow: auto;
    h3 {
         color: #ffffff;
+        margin-bottom: 4px;
+    }
+    .name {
+        font-size: calc(0.9rem + 0.5vw);
         margin-bottom: 4px;
     }
    .titleCard {
@@ -93,10 +116,6 @@ const AddProductStyle = styled.div`
         font-weight: 400;
         span {
             font-weight: 700;
-            &.isAvail {
-                color: var(--success);
-                padding-left: 20px;
-            }
         }
     }
    }
@@ -124,28 +143,13 @@ const AddProductStyle = styled.div`
         .quantityCount {
             color: #ffffff;
             padding: 0 10px;
+            min-width: 40px;
+            text-align: center;
         }
     }
     .priceSec {
         color: #ffffff;
         font-weight: 700;
-    }
-}
-.cutTypes {
-    margin-bottom: 24px;
-    .quote {
-        background-color: var(--collapseBg);
-        color: #ffffff;
-        font-size: 10px;
-        padding: 4px;
-        margin-bottom: 4px;
-    }
-}
-.sizeSec {
-    margin-bottom: 24px;
-    .sizeList {
-        display: flex;
-        gap: 6px;
     }
 }
 button.secondary {

@@ -6,21 +6,21 @@ import Categorized from './utils/Categorized'
 import AddProductPop from './utils/AddProductPop'
 
 export default function ProductCard({product}) {
-    console.log(product)
+    // console.log(product)
     const {setPopup} = useContext(IraiContextContainer);
 
     const closeImage = () => setPopup({open: false});
     const openImage = () => setPopup({open: true, content: <img src={product.image} alt="iraitchi" onClick={closeImage} />});
     function handleAddProduct() {
-        setPopup({open: true, content: <AddProductPop picked={product} />})
+        product?.available && setPopup({open: true, content: <AddProductPop picked={product} />}) 
     }
 
     return (
-    <CardStyle>
+    <CardStyle className={`${!product?.available && 'no'}`}>
         {!!product?.image && <img src={product.image} alt="iraitchi" onClick={openImage} />}
         <div className="productContent" onClick={handleAddProduct}>
             <h3>{product?.name || "-"}</h3>
-            <AmountToShow price={product?.price} />
+            <AmountToShow price={product?.price} available={product?.available} />
             <Categorized list={[product?.category, product?.subCategory]} />
         </div>
         <div className="action"  onClick={handleAddProduct}>
@@ -40,7 +40,11 @@ const CardStyle = styled.div`
     padding: 4px;
     cursor: pointer;
     transition: 0.4s all;
-    &:hover {
+    &.no {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    &:hover:not(&.no) {
         box-shadow: rgba(255 235 59 / 33%) 0px 3px 12px 0px;
         background: var(--primary);
         h3, h2, button {

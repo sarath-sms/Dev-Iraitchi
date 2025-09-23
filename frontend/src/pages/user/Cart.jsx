@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Address from '../../components/Address'
 import Collapse from '../../components/Collapse'
+import { IraiContextContainer } from '../../context/Context';
 
 export default function Cart() {
+  const {userData: {pincode}, setPopup, iraiData, setIraiData} = useContext(IraiContextContainer);
+  console.log(iraiData, "iraiData")
   return (
     <CartStyle className='mainContainer'>
       <section className="iraiScreen">

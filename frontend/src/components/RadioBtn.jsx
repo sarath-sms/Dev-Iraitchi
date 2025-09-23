@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function RadioBtn({name, id, value, label, className}) {
+export default function RadioBtn({name, id, value, label, className, onChange, checked = false}) {
   return <RadioBtnStyle htmlFor={id} className={className}>
-      <input type="radio" name={name} id={id} value={value} />
+      <input type="radio" name={name} id={id} defaultValue={value} onChange={onChange} defaultChecked={checked} />
       <span>{label}</span>
   </RadioBtnStyle>
 }

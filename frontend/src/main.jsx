@@ -23,22 +23,18 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />, // layout component
     children: [
-      {
-        element: <Home />,
-        children: [
-          { path: "documentation", element: <Documentation /> },
-          { path: "login", element: <UserLogin /> },
-          { path: "verifyOtp", element: <VerifyOtp /> },
-          { path: "products", element: <Products /> },
-          { path: "cart", element: <Cart /> },
-          { path: "feedback", element: <Feedback /> },
-          { path: "profile", element: <Profile /> },
-          { path: "apologise", element: <Apologise /> },
+      {index: true, element: <Home />},
+      { path: "documentation", element: <Documentation /> },
+      { path: "login", element: <UserLogin /> },
+      { path: "verifyOtp", element: <VerifyOtp /> },
+      { path: "products", element: <Products /> },
+      { path: "cart", element: <Cart /> },
+      { path: "feedback", element: <Feedback /> },
+      { path: "profile", element: <Profile /> },
+      { path: "apologise", element: <Apologise /> },
 
-          // { path: "products", element: <Products /> },
-          // { path: "iraiAdmin", element: <UserLogin /> }
-        ]
-      },
+      // { path: "products", element: <Products /> },
+      // { path: "iraiAdmin", element: <UserLogin /> }
       // { path: "contact", element: <Contact /> },
     ],
   },
