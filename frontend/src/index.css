@@ -38,18 +38,18 @@ input::placeholder {
   opacity: 0.6;
 }
 
-.iraiScreen::-webkit-scrollbar {
-  width: 3px;
+.iraiScreen::-webkit-scrollbar, .collapseOptions.show::-webkit-scrollbar {
+  width: 4px;
 }
 
-.iraiScreen::-webkit-scrollbar-track {
+.iraiScreen::-webkit-scrollbar-track, .collapseOptions.show::-webkit-scrollbar-track {
   background: #303952;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-.iraiScreen::-webkit-scrollbar-thumb {
+.iraiScreen::-webkit-scrollbar-thumb, .collapseOptions.show::-webkit-scrollbar-thumb {
   background: #ada34c52;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* 2) Full-viewport app shell with safe-area support 

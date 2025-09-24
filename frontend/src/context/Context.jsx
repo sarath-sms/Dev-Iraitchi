@@ -16,7 +16,11 @@ export default function IraiContext({children}) {
       name: '',
       mobile: '',
       pincode: '',
-      address: {}
+      address: {
+        houseId: '',
+        addr1: '',
+        addr2: '',
+      }
     }
   })
 

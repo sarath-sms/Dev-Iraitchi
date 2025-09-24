@@ -18,6 +18,7 @@ export default function AddProductPop({picked}) {
     const [item, setItem] = useState({
         id,
         name,
+        image,
         count: 1,
         // price: 800,
         cuts: null

@@ -35,6 +35,14 @@ export default function UserLogin() {
     setUserData(prev => ({...prev, mobile: e.target.value}))
   }
 
+  const handleKeyPress = (e) => {
+    if(testRegex(/^[6789]\d{9}$/, mobile)) {
+      if (e.key === "Enter") {
+        proceed();
+      }
+    }
+  };
+
   return (
     <Style className='mainContainer'>
       <section className="iraiScreen">
@@ -44,7 +52,7 @@ export default function UserLogin() {
             <br/><br/>Your number is safe with us - no spam, <br /> <b>only value!</b>
           </p>
         </div>
-        <Textbox className="mobTxt" value={mobile} onChange={handleMobile} maxLength={10} placeholder="Enter Your Mobile Number" inputmode="numeric" />
+        <Textbox className="mobTxt" value={mobile} onChange={handleMobile} onKeyDown={handleKeyPress} maxLength={10} placeholder="Enter Your Mobile Number" inputmode="numeric" />
       </section>
       <footer>
         <Button className="primary" label="ENTER" disable={btnDisable} onClick={proceed} />

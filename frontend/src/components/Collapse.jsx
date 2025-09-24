@@ -62,7 +62,7 @@ const CollapseStyle = styled.div`
         border-radius: 0 0 10px 10px;
         transition: 0.2s all;
         &.show {
-            max-height: 300px;
+            min-height: 100px;
         }
         &.hide {
             height: 0px;

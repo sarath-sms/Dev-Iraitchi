@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Textbox({value = '', placeholder, disabled = false, className, onChange, inputmode = "email", maxLength = 200, name}) {
-  return <TextStyle type="text" disabled={disabled} className={className && className} value={value} placeholder={placeholder} name={name} onChange={onChange && onChange} inputMode={inputmode} maxLength={maxLength} />
+export default function Textbox({onKeyDown, value = '', placeholder, disabled = false, className, onChange, inputmode = "email", maxLength = 200, name}) {
+  return <TextStyle type="text" onKeyDown={onKeyDown && onKeyDown} disabled={disabled} className={className && className} value={value} placeholder={placeholder} name={name} onChange={onChange && onChange} inputMode={inputmode} maxLength={maxLength} />
 }
 
 

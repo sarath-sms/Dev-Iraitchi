@@ -5,6 +5,7 @@ import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import TimerResend from '../../components/TimerResend';
 import { IraiContextContainer } from '../../context/Context';
+import { maskMobile } from '../utils/commonFunctions';
 
 export default function VerifyOtp() {
   const {userData: {mobile, iraiVerify = false}, setUserData} = useContext(IraiContextContainer)
@@ -35,8 +36,10 @@ export default function VerifyOtp() {
     }
 
     useEffect(() => {
+      if(!mobile) return navigate('/login');
       if(iraiVerify) return navigate('/products');
         // ✅ Auto-detect OTP via Web OTP API (Android Chrome)
+        // followinmg if condition should be in .then after api call
         if ("OTPCredential" in window) {
           const ac = new AbortController();
           navigator.credentials
@@ -63,14 +66,22 @@ export default function VerifyOtp() {
         }
       }, [otp])
 
+      const handleKeyPress = (e) => {
+          if((otp?.length === 4) && (e?.key === "Enter")) {
+            verifyOtp();
+          }
+        };
+
   return (
     <Style className='mainContainer'>
         <section className="iraiScreen">
             <div className="otpContainer">
+              <p className='msg'>An OTP has been sent to your mobile number ending with {!!mobile && maskMobile(mobile)}</p>
                 <OtpInput
                     value={otp}
                     onChange={setOtp}
                     numInputs={4}
+                    onKeyDown={handleKeyPress}
                     containerStyle="reactOtp"
                     renderSeparator={<span className='seperator'>  </span>}
                     renderInput={(props) => <input {...props} autoComplete='one-time-code' className={`otpTxt ${!!error ? 'err' : ''}`} inputMode="numeric" />}
@@ -94,6 +105,10 @@ const Style = styled.div`
     gap: 16px;
     justify-content: center;
     padding-bottom: 50%;
+}
+.msg {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 .otpTxt {
     width: 2.4em !important;
