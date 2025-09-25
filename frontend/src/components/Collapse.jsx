@@ -56,7 +56,7 @@ const CollapseStyle = styled.div`
     }
     .collapseOptions {
         background-color: var(--collapseBg);
-        padding: 20px 12px 12px;
+        padding: 20px 10px 10px;
         margin-top: -6px;
         overflow: hidden;
         border-radius: 0 0 10px 10px;

@@ -9,6 +9,13 @@ export default function IraiContext({children}) {
     const saved = getDecryptedItem("iraiData")
     return !!saved ? saved : []
   });
+  const [cartDetails, setCartDetails] = useState(() => {
+    const saved = getDecryptedItem("cd");
+    return !!saved ? saved : {
+      bookedAt: '', // should update from api success payment
+      deliverBetween: ''
+    }
+  })
 
   const [userData, setUserData] = useState(() => {
     const saved = getDecryptedItem("ud")
@@ -33,6 +40,10 @@ export default function IraiContext({children}) {
     setEncryptedItem("ud", userData);
   }, [userData]);
 
+  useEffect(() => {
+    setEncryptedItem("cd", cartDetails);
+  }, [cartDetails]);
+
   // Listen for changes across tabs - in future
   // useEffect(() => {
   //   const handleStorage = (event) => {
@@ -48,7 +59,8 @@ export default function IraiContext({children}) {
     <IraiContextContainer.Provider value={{
       iraiData, setIraiData,
       popup, setPopup,
-      userData, setUserData
+      userData, setUserData,
+      cartDetails, setCartDetails
     }}>
       {children}
     </IraiContextContainer.Provider>

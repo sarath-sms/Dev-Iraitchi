@@ -38,11 +38,7 @@ export default function AddProductPop({picked}) {
     function handleAddToCart() {
         const saveItem = removeFalsy(item)
         setIraiData(prev => ([...prev, saveItem]));
-        if(!!pincode) {
-            setPopup({open:false});
-        } else {
-            setPopup({open:true, content: <PincodePop path="/cart" />});
-        }
+        setPopup({open:false});
     }
 
     function handleCount(val) {

@@ -5,9 +5,10 @@ import cartIcon from '../assets/icons/menu/cart.svg';
 import feedbackIcon from '../assets/icons/menu/feedback.svg';
 import profileIcon from '../assets/icons/menu/profile.svg';
 import { IraiContextContainer } from '../context/Context';
+import PincodePop from './utils/PincodePop';
 
 export default function FooterMenu() {
-  const {iraiData, setPopup} = useContext(IraiContextContainer);
+  const {userData: {pincode}, iraiData, setPopup} = useContext(IraiContextContainer);
   const navigate = useNavigate();
 
   const CartEmpty = () => (<CartEmptyStyle>
@@ -16,7 +17,11 @@ export default function FooterMenu() {
 
   function handleCartNav() {
     if(!!iraiData?.length){
-      navigate('/cart')
+      if(!!pincode) {
+            navigate('/cart')
+        } else {
+            setPopup({open:true, content: <PincodePop path="/cart" />});
+        }
     } else {
       setPopup({open: true, content: <CartEmpty />})
     }

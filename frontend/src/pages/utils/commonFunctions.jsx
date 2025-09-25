@@ -2,6 +2,11 @@ export function testRegex(regex, str) {
     return regex.test(str);
   }
 
+  export function checkCurrentDate(savedDate) {
+    const currentDate = new Date().toISOString().split("T")[0];
+    return savedDate === currentDate
+  }
+
   export function removeFalsy(obj) {
     return Object.fromEntries(
       Object.entries(obj).filter(([_, v]) => v)

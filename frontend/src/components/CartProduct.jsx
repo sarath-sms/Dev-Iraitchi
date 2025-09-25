@@ -26,7 +26,7 @@ export default function CartProduct({product}) {
         <img className='prodImg' src={image} alt={name} />
         <div className="cartNodeContent">
             <h5>{name}</h5>
-            <p className="actualData"> <span>₹{price}</span> per Kg {cuts && ` - ${type}`}</p>
+            <p className="actualData"> <span>₹{price}</span> per Kg {cuts && <span className='small'> ({cuts?.type})</span>}</p>
             <div className="priceActions">
                 <h3 className="productCost">₹{price * count}</h3>
                 <div className="addsub">
@@ -70,6 +70,9 @@ const CartProductStyle = styled.div`
                 margin-bottom: 4px;
                 span {
                     color: var(--primary);
+                    &.small {
+                        font-size: 0.6rem;
+                    }
                 }
             }
             .priceActions {
@@ -84,6 +87,8 @@ const CartProductStyle = styled.div`
                     justify-content: center;
                     align-items: center;
                     text-align: center;
+                    border-radius: 0 0 4px 0;
+                    overflow: hidden;
                     .cnt {
                         font-weight: 700;
                         width: 32px;
